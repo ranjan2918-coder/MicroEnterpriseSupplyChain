@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micro-Enterprise Supply Chain & Last-Mile Delivery Optimizer</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Using Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Supply Chain Optimizer</h2>
+            </div>
+            <nav class="sidebar-nav" id="sidebarNav">
+                <a href="#" class="nav-link active" data-target="dashboard-section"><i class="fas fa-chart-line"></i> Dashboard</a>
+                <a href="#" class="nav-link" data-target="contacts-section"><i class="fas fa-users"></i> Contacts</a>
+                <a href="#" class="nav-link" data-target="products-section"><i class="fas fa-box"></i> Products</a>
+                <a href="#" class="nav-link" data-target="purchase-orders-section"><i class="fas fa-shopping-bag"></i> Purchase Orders</a>
+                <a href="#" class="nav-link" data-target="sales-orders-section"><i class="fas fa-shopping-cart"></i> Sales Orders</a>
+                <a href="#" class="nav-link" data-target="invoices-section"><i class="fas fa-file-invoice-dollar"></i> Invoices</a>
+                <a href="#" class="nav-link" data-target="payments-section"><i class="fas fa-credit-card"></i> Payments</a>
+                <a href="#" class="nav-link" data-target="delivery-tracking-section"><i class="fas fa-truck"></i> Delivery Tracking</a>
+                <a href="#" class="nav-link" data-target="chart-of-accounts-section"><i class="fas fa-landmark"></i> Chart of Accounts</a>
+                <a href="#" class="nav-link" data-target="analytic-accounts-section"><i class="fas fa-project-diagram"></i> Analytic Accounts</a>
+                <a href="#" class="nav-link" data-target="budgets-section"><i class="fas fa-piggy-bank"></i> Budgets</a>
+                <a href="#" class="nav-link" data-target="reports-section"><i class="fas fa-chart-bar"></i> Reports</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Navbar -->
+            <header class="navbar">
+                <div class="navbar-title">
+                    <h1>Micro-Enterprise Supply Chain & Last-Mile Delivery Optimizer</h1>
+                    <p>Rural Artisan Supply Chain Management System</p>
+                </div>
+                <div class="navbar-user">
+                    <div class="avatar">AD</div>
+                </div>
+            </header>
+
+            <!-- Page Content Wrapper -->
+            <main class="page-wrapper" id="pageWrapper">
+                
+                <!-- Dashboard Section -->
+                <section id="dashboard-section" class="page-section active">
+                    <div class="page-header">
+                        <h2>Dashboard Overview</h2>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="dashboard-card border-blue">
+                            <div class="card-info">
+                                <h3>Total Contacts</h3>
+                                <p class="card-value text-blue" id="stat-contacts">Loading...</p>
+                            </div>
+                            <div class="card-icon bg-blue"><i class="fas fa-users"></i></div>
+                        </div>
+                        <div class="dashboard-card border-green">
+                            <div class="card-info">
+                                <h3>Total Products</h3>
+                                <p class="card-value text-green" id="stat-products">Loading...</p>
+                            </div>
+                            <div class="card-icon bg-green"><i class="fas fa-box"></i></div>
+                        </div>
+                        <div class="dashboard-card border-purple">
+                            <div class="card-info">
+                                <h3>Total Orders</h3>
+                                <p class="card-value text-purple" id="stat-orders">Loading...</p>
+                            </div>
+                            <div class="card-icon bg-purple"><i class="fas fa-shopping-cart"></i></div>
+                        </div>
+                        <div class="dashboard-card border-orange">
+                            <div class="card-info">
+                                <h3>Pending Orders</h3>
+                                <p class="card-value text-orange" id="stat-pending">0</p>
+                            </div>
+                            <div class="card-icon bg-orange"><i class="fas fa-clock"></i></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contacts Section -->
+                <section id="contacts-section" class="page-section">
+                    <div class="page-header">
+                        <h2>Contact Management</h2>
+                        <button class="btn-primary" onclick="openContactModal()">Add Contact</button>
+                    </div>
+                    <div class="card">
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Type</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="contacts-table-body">
+                                    <tr><td colspan="6" class="text-center">Loading...</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Products Section -->
+                <section id="products-section" class="page-section">
+                    <div class="page-header">
+                        <h2>Product Management</h2>
+                        <button class="btn-primary" onclick="openProductModal()">Add Product</button>
+                    </div>
+                    <div class="card">
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Type</th>
+                                        <th>Selling Price</th>
+                                        <th>Stock Qty</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="products-table-body">
+                                    <tr><td colspan="6" class="text-center">Loading...</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                
+                <!-- Purchase Orders Section -->
+                <section id="purchase-orders-section" class="page-section">
+                    <div class="page-header">
+                        <h2>Purchase Orders</h2>
+                        <button class="btn-primary" onclick="openPOModal()">Add Purchase Order</button>
+                    </div>
+                    <div class="card">
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr><th>ID</th><th>Artisan ID</th><th>Order Date</th><th>Total Amount</th><th>Status</th><th>Actions</th></tr>
+                                </thead>
+                                <tbody id="po-table-body"><tr><td colspan="6" class="text-center">Loading...</td></tr></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sales Orders Section -->
+                <section id="sales-orders-section" class="page-section">
+                    <div class="page-header">
+                        <h2>Sales Orders</h2>
+                        <button class="btn-primary" onclick="openSOModal()">Add Sales Order</button>
+                    </div>
+                    <div class="card">
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr><th>ID</th><th>Merchant ID</th><th>Order Date</th><th>Total Amount</th><th>Status</th><th>Actions</th></tr>
+                                </thead>
+                                <tbody id="so-table-body"><tr><td colspan="6" class="text-center">Loading...</td></tr></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Invoices Section -->
+                <section id="invoices-section" class="page-section">
+                    <div class="page-header">
+                        <h2>Invoices</h2>
+                        <button class="btn-primary" onclick="openInvoiceModal()">Add Invoice</button>
+                    </div>
+                    <div class="card">
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr><th>ID</th><th>Merchant ID</th><th>Sales Order ID</th><th>Amount</th><th>Date</th><th>Status</th></tr>
+                                </thead>
+                                <tbody id="invoice-table-body"><tr><td colspan="6" class="text-center">Loading...</td></tr></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Payments Section -->
+                <section id="payments-section" class="page-section">
+                    <div class="page-header">
+                        <h2>Payments</h2>
+                        <button class="btn-primary" onclick="openPaymentModal()">Record Payment</button>
+                    </div>
+                    <div class="card">
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr><th>ID</th><th>Invoice / Bill ID</th><th>Amount</th><th>Date</th><th>Type</th><th>Status</th></tr>
+                                </thead>
+                                <tbody id="payment-table-body"><tr><td colspan="6" class="text-center">Loading...</td></tr></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Delivery Tracking Section -->
+                <section id="delivery-tracking-section" class="page-section">
+                    <div class="page-header">
+                        <h2>Delivery Tracking</h2>
+                        <button class="btn-primary" onclick="openDeliveryModal()">Add Delivery</button>
+                    </div>
+                    <div class="card">
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr><th>ID</th><th>Sales Order ID</th><th>Partner ID</th><th>Tracking #</th><th>Status</th><th>Date</th></tr>
+                                </thead>
+                                <tbody id="delivery-table-body"><tr><td colspan="6" class="text-center">Loading...</td></tr></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Chart of Accounts Section -->
+                <section id="chart-of-accounts-section" class="page-section">
+                    <div class="page-header">
+                        <h2>Chart of Accounts</h2>
+                        <button class="btn-primary" onclick="openAccountModal()">Add Account</button>
+                    </div>
+                    <div class="card">
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr><th>ID</th><th>Code</th><th>Name</th><th>Type</th><th>Balance</th></tr>
+                                </thead>
+                                <tbody id="account-table-body"><tr><td colspan="5" class="text-center">Loading...</td></tr></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Analytic Accounts Section -->
+                <section id="analytic-accounts-section" class="page-section">
+                    <div class="page-header">
+                        <h2>Analytic Accounts (Clusters)</h2>
+                        <button class="btn-primary" onclick="openClusterModal()">Add Cluster</button>
+                    </div>
+                    <div class="card">
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr><th>ID</th><th>Name</th><th>Region</th><th>Description</th></tr>
+                                </thead>
+                                <tbody id="cluster-table-body"><tr><td colspan="4" class="text-center">Loading...</td></tr></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Budgets Section -->
+                <section id="budgets-section" class="page-section">
+                    <div class="page-header">
+                        <h2>Budgets</h2>
+                        <button class="btn-primary" onclick="openBudgetModal()">Add Budget</button>
+                    </div>
+                    <div class="card">
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr><th>ID</th><th>Year</th><th>Cluster ID</th><th>Planned</th><th>Actual</th><th>Remaining</th></tr>
+                                </thead>
+                                <tbody id="budget-table-body"><tr><td colspan="6" class="text-center">Loading...</td></tr></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Reports Section -->
+                <section id="reports-section" class="page-section">
+                    <div class="page-header">
+                        <h2>Reports Dashboard</h2>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="card">
+                            <h3>Profit & Loss</h3>
+                            <div id="report-pl">Loading...</div>
+                        </div>
+                        <div class="card">
+                            <h3>Balance Sheet</h3>
+                            <div id="report-bs">Loading...</div>
+                        </div>
+                    </div>
+                </section>
+
+
+            </main>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add Contact</h2>
+                <span class="close" onclick="closeModal('contactModal')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="contactForm" onsubmit="handleContactSubmit(event)">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" id="contactName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="contactEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="text" id="contactPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Address</label>
+                        <input type="text" id="contactAddress">
+                    </div>
+                    <div class="form-group">
+                        <label>Contact Type</label>
+                        <select id="contactType" required>
+                            <option value="RURAL_ARTISAN">Rural Artisan / Vendor</option>
+                            <option value="MERCHANT_BUYER">Merchant Buyer / Customer</option>
+                            <option value="DELIVERY_PARTNER">Delivery Partner</option>
+                        </select>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" onclick="closeModal('contactModal')">Cancel</button>
+                        <button type="submit" class="btn-primary">Save Contact</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- PO Modal -->
+    <div id="poModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header"><h2>Create Purchase Order</h2><span class="close" onclick="closeModal('poModal')">&times;</span></div>
+            <div class="modal-body">
+                <form id="poForm" onsubmit="handlePOSubmit(event)">
+                    <div class="form-group"><label>Artisan ID</label><input type="number" id="poArtisanId" required></div>
+                    <div class="form-group"><label>Product ID</label><input type="number" id="poProductId" required></div>
+                    <div class="form-group"><label>Quantity</label><input type="number" id="poQty" required></div>
+                    <div class="form-group"><label>Unit Price</label><input type="number" step="0.01" id="poPrice" required></div>
+                    <div class="form-actions"><button type="button" class="btn-secondary" onclick="closeModal('poModal')">Cancel</button><button type="submit" class="btn-primary">Create</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- SO Modal -->
+    <div id="soModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header"><h2>Create Sales Order</h2><span class="close" onclick="closeModal('soModal')">&times;</span></div>
+            <div class="modal-body">
+                <form id="soForm" onsubmit="handleSOSubmit(event)">
+                    <div class="form-group"><label>Merchant ID</label><input type="number" id="soMerchantId" required></div>
+                    <div class="form-group"><label>Product ID</label><input type="number" id="soProductId" required></div>
+                    <div class="form-group"><label>Quantity</label><input type="number" id="soQty" required></div>
+                    <div class="form-group"><label>Unit Price</label><input type="number" step="0.01" id="soPrice" required></div>
+                    <div class="form-actions"><button type="button" class="btn-secondary" onclick="closeModal('soModal')">Cancel</button><button type="submit" class="btn-primary">Create</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Invoice Modal -->
+    <div id="invoiceModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header"><h2>Create Invoice</h2><span class="close" onclick="closeModal('invoiceModal')">&times;</span></div>
+            <div class="modal-body">
+                <form id="invoiceForm" onsubmit="handleInvoiceSubmit(event)">
+                    <div class="form-group"><label>Sales Order ID</label><input type="number" id="invOrderId" required></div>
+                    <div class="form-actions"><button type="button" class="btn-secondary" onclick="closeModal('invoiceModal')">Cancel</button><button type="submit" class="btn-primary">Create</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header"><h2>Record Payment</h2><span class="close" onclick="closeModal('paymentModal')">&times;</span></div>
+            <div class="modal-body">
+                <form id="paymentForm" onsubmit="handlePaymentSubmit(event)">
+                    <div class="form-group"><label>Invoice ID</label><input type="number" id="payInvoiceId" required></div>
+                    <div class="form-group"><label>Amount</label><input type="number" step="0.01" id="payAmount" required></div>
+                    <div class="form-group"><label>Reference Number</label><input type="text" id="payRef"></div>
+                    <div class="form-actions"><button type="button" class="btn-secondary" onclick="closeModal('paymentModal')">Cancel</button><button type="submit" class="btn-primary">Create</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Delivery Modal -->
+    <div id="deliveryModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header"><h2>Add Delivery</h2><span class="close" onclick="closeModal('deliveryModal')">&times;</span></div>
+            <div class="modal-body">
+                <form id="deliveryForm" onsubmit="handleDeliverySubmit(event)">
+                    <div class="form-group"><label>Sales Order ID</label><input type="number" id="delOrderId" required></div>
+                    <div class="form-group"><label>Partner ID</label><input type="number" id="delPartnerId" required></div>
+                    <div class="form-group"><label>Tracking Number</label><input type="text" id="delTracking" required></div>
+                    <div class="form-actions"><button type="button" class="btn-secondary" onclick="closeModal('deliveryModal')">Cancel</button><button type="submit" class="btn-primary">Create</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Account Modal -->
+    <div id="accountModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header"><h2>Add Account</h2><span class="close" onclick="closeModal('accountModal')">&times;</span></div>
+            <div class="modal-body">
+                <form id="accountForm" onsubmit="handleAccountSubmit(event)">
+                    <div class="form-group"><label>Account Code</label><input type="text" id="accCode" required></div>
+                    <div class="form-group"><label>Account Name</label><input type="text" id="accName" required></div>
+                    <div class="form-group"><label>Type</label><select id="accType" required><option value="ASSET">Asset</option><option value="LIABILITY">Liability</option><option value="INCOME">Income</option><option value="EXPENSE">Expense</option></select></div>
+                    <div class="form-actions"><button type="button" class="btn-secondary" onclick="closeModal('accountModal')">Cancel</button><button type="submit" class="btn-primary">Create</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Cluster Modal -->
+    <div id="clusterModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header"><h2>Add Cluster</h2><span class="close" onclick="closeModal('clusterModal')">&times;</span></div>
+            <div class="modal-body">
+                <form id="clusterForm" onsubmit="handleClusterSubmit(event)">
+                    <div class="form-group"><label>Name</label><input type="text" id="cluName" required></div>
+                    <div class="form-group"><label>Region</label><input type="text" id="cluRegion" required></div>
+                    <div class="form-group"><label>Description</label><input type="text" id="cluDesc" required></div>
+                    <div class="form-actions"><button type="button" class="btn-secondary" onclick="closeModal('clusterModal')">Cancel</button><button type="submit" class="btn-primary">Create</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Budget Modal -->
+    <div id="budgetModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header"><h2>Add Budget</h2><span class="close" onclick="closeModal('budgetModal')">&times;</span></div>
+            <div class="modal-body">
+                <form id="budgetForm" onsubmit="handleBudgetSubmit(event)">
+                    <div class="form-group"><label>Budget Year</label><input type="number" id="budYear" required></div>
+                    <div class="form-group"><label>Cluster ID</label><input type="number" id="budClusterId" required></div>
+                    <div class="form-group"><label>Planned Amount</label><input type="number" step="0.01" id="budPlanned" required></div>
+                    <div class="form-actions"><button type="button" class="btn-secondary" onclick="closeModal('budgetModal')">Cancel</button><button type="submit" class="btn-primary">Create</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
